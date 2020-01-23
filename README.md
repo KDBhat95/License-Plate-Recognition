@@ -5,6 +5,7 @@ Overview
 
 This project creates a kubernetes cluster that provides a REST API for scanning images that contain geotagged license plates and records them in a database.
 The following services were deployed:
+
 rest - the REST frontend will accept images for analysis and handle queries concerning specific license plates and geo-coordinates. The REST worker will queue tasks to workers using rabbitmq messages.
 
 worker - Worker nodes will receive work requests to analyze images. If those images contain both a geo-tagged image and a vehicle with a license plate that can be scanned, the information is entered into the REDIS database.
@@ -16,6 +17,7 @@ redis - One node, which should be named 'redis' should provide the redis databas
 The worker will use the open source automatic license plate reader software. This is an open-source component of a more comprehensive commercial offering. One of the commercial components includes a web service similar to what we're building.
 
 Suggested Steps
+
 You should first deploy the rabbitmq and redis deployments because they're easy, particularly if you deploy the versions provided by the developers. For each of those, you'll need to specify a deployment and then create a Service for that deployment. Following that, you should construct the rest server because you can use that to test your redis database connection as well as connections to rabbitmq and your debugging interface. Lastly, start on the worker.
 
 Although not explicitly required, you should create a simple python program that connects to the debugging topic exchange as described in rabbitmq. You can use that to subscribe to any informational or debug messages to understand what's going on. It's useful to deploy that service as a "logs" pod (or deployment) so you can monitor the output using kubectl logs logs-<unique id for pod>
