@@ -27,7 +27,11 @@ You should use version numbers for your container images. If you're in a edit/de
 Each subdirectory contains directions in the appropriate README file. The images directory contains test images.
 
 beetle.jpg is not geotagged and has one visible license plate (309-OJN)
+
 car.jpg is not geotagged but has one visible license (CZTHEDA)
+
 geotagged.jpg is geotagged but has no cars
+
 the-meat-car.jpg is geotagged and has one visible license (789-SJL but reported as 7B9SJLD)
+
 The plate1.png image is a PNG image -- you can use this to test what happens when non-jpg files are submitted.
