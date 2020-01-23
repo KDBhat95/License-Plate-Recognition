@@ -1,5 +1,6 @@
 # License-Plate-Recognition
 Automatic license plate recognition service implemented using kubernetes.
+
 Overview
 This project creates a kubernetes cluster that provides a REST API for scanning images that contain geotagged license plates and records them in a database.
 The following services were deployed:
